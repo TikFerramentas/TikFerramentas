@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikFerramentas - Download</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        :root { --primary: #fe2c55; --secondary: #25f4ee; }
+        body { font-family: 'Inter', sans-serif; background: #0a0a0b; color: white; margin: 0; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50%       { transform: translateY(-12px); }
+        }
+        .float { animation: float 3s ease-in-out infinite; }
+
+        @keyframes fade-up {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .fade-up { animation: fade-up 0.6s ease-out both; }
+        .delay-1 { animation-delay: .1s; }
+        .delay-2 { animation-delay: .2s; }
+        .delay-3 { animation-delay: .3s; }
+        .delay-4 { animation-delay: .4s; }
+
+        .glow-btn {
+            background: var(--primary);
+            box-shadow: 0 0 40px rgba(254,44,85,0.4);
+            transition: all .2s;
+        }
+        .glow-btn:hover {
+            box-shadow: 0 0 60px rgba(254,44,85,0.7);
+            transform: scale(1.03);
+        }
+
+        .step-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .step-card:hover {
+            background: rgba(254,44,85,0.05);
+            border-color: rgba(254,44,85,0.2);
+        }
+
+        /* Noise texture */
+        body::before {
+            content: '';
+            position: fixed; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none; z-index: 0;
+        }
+
+        /* Glow bg */
+        .bg-glow {
+            position: fixed;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(254,44,85,0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px; left: 50%; transform: translateX(-50%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative">
+
+    <div class="bg-glow"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-6 py-20">
+
+        <!-- Header -->
+        <div class="text-center mb-20 fade-up">
+            <div class="float inline-block text-7xl mb-6">🎮</div>
+            <h1 class="text-6xl font-black italic uppercase tracking-tighter leading-none">
+                TIK<span style="color:var(--primary)">FERRAMENTAS</span>
+            </h1>
+            <p class="text-zinc-400 mt-4 text-lg font-medium">
+                Suite completa para streamers do TikTok Live
+            </p>
+        </div>
+
+        <!-- Download Card -->
+        <div class="fade-up delay-1 text-center mb-20">
+            <a href="./releases/TikFerramentas-Server.exe" download
+               class="glow-btn inline-flex items-center gap-4 px-10 py-6 rounded-2xl text-white font-black text-xl uppercase tracking-tight">
+                <span class="text-3xl">⬇️</span>
+                Baixar TikFerramentas.exe
+            </a>
+            <p class="text-zinc-600 text-xs mt-3 font-bold uppercase tracking-widest">
+                Windows 64-bit · ~45MB · Gratuito
+            </p>
+        </div>
+
+        <!-- O que inclui -->
+        <div class="fade-up delay-2 mb-16">
+            <h2 class="text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-6 text-center">O que está incluído</h2>
+            <div class="grid grid-cols-2 gap-3">
+                <div class="step-card p-4 rounded-2xl flex items-center gap-3 transition-all">
+                    <span class="text-2xl">🎁</span>
+                    <div>
+                        <p class="font-black text-sm">Monitor de Presentes</p>
+                        <p class="text-zinc-500 text-xs">Feed ao vivo em tempo real</p>
+                    </div>
+                </div>
+                <div class="step-card p-4 rounded-2xl flex items-center gap-3 transition-all">
+                    <span class="text-2xl">🖼️</span>
+                    <div>
+                        <p class="font-black text-sm">Widgets para OBS</p>
+                        <p class="text-zinc-500 text-xs">6 overlays prontos</p>
+                    </div>
+                </div>
+                <div class="step-card p-4 rounded-2xl flex items-center gap-3 transition-all">
+                    <span class="text-2xl">📊</span>
+                    <div>
+                        <p class="font-black text-sm">Rankings ao vivo</p>
+                        <p class="text-zinc-500 text-xs">Top doadores da sessão</p>
+                    </div>
+                </div>
+                <div class="step-card p-4 rounded-2xl flex items-center gap-3 transition-all">
+                    <span class="text-2xl">⌨️</span>
+                    <div>
+                        <p class="font-black text-sm">Keyboard Actions</p>
+                        <p class="text-zinc-500 text-xs">Teclas por presente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Passo a passo -->
+        <div class="fade-up delay-3 mb-16">
+            <h2 class="text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-6 text-center">Como usar</h2>
+            <div class="space-y-3">
+                <div class="step-card p-5 rounded-2xl flex items-center gap-5 transition-all">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center font-black text-lg flex-shrink-0"
+                         style="background:rgba(254,44,85,0.15);color:var(--primary)">1</div>
+                    <div>
+                        <p class="font-black">Baixe e abra o <code class="text-xs bg-white/5 px-2 py-1 rounded">TikFerramentas.exe</code></p>
+                        <p class="text-zinc-500 text-xs mt-1">Uma janela preta vai aparecer — não feche durante a live</p>
+                    </div>
+                </div>
+                <div class="step-card p-5 rounded-2xl flex items-center gap-5 transition-all">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center font-black text-lg flex-shrink-0"
+                         style="background:rgba(254,44,85,0.15);color:var(--primary)">2</div>
+                    <div>
+                        <p class="font-black">Abra o site e digite seu <span style="color:var(--primary)">@usuário</span></p>
+                        <p class="text-zinc-500 text-xs mt-1">O site conecta no servidor que está rodando no seu PC</p>
+                    </div>
+                </div>
+                <div class="step-card p-5 rounded-2xl flex items-center gap-5 transition-all">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center font-black text-lg flex-shrink-0"
+                         style="background:rgba(254,44,85,0.15);color:var(--primary)">3</div>
+                    <div>
+                        <p class="font-black">Inicie sua live no TikTok e clique em <span style="color:var(--primary)">Conectar</span></p>
+                        <p class="text-zinc-500 text-xs mt-1">Os presentes vão aparecer em tempo real</p>
+                    </div>
+                </div>
+                <div class="step-card p-5 rounded-2xl flex items-center gap-5 transition-all">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center font-black text-lg flex-shrink-0"
+                         style="background:rgba(37,244,238,0.15);color:var(--secondary)">4</div>
+                    <div>
+                        <p class="font-black">Copie as URLs dos <span style="color:var(--secondary)">Widgets</span> e cole no OBS</p>
+                        <p class="text-zinc-500 text-xs mt-1">Adicione como "Navegador" e marque "Tornar transparente"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Requisitos -->
+        <div class="fade-up delay-4 text-center">
+            <div class="inline-flex gap-6 text-xs text-zinc-600 font-bold uppercase tracking-widest">
+                <span>✅ Windows 10/11</span>
+                <span>✅ Sem instalação</span>
+                <span>✅ 100% gratuito</span>
+                <span>✅ Código aberto</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
